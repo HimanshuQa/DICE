@@ -10,19 +10,20 @@ public class Die {
 	public String roll(){
 		Random r = new Random();
 		String[] HT = {"Head" , "Tail"};
+		String[] other = {"One", "Two", "Three", "Four","Five","Six"};
 		
 		if(this.faces == 2){
 			int  output = r.nextInt(this.faces);
 			return HT[output];
 		}
 		else{
-			int  output = r.nextInt(this.faces) + 1;
-			return(String.valueOf(output));
+			int  output = r.nextInt(this.faces);
+			return(other[output]);
 		}
 	}
 	
 	public static void main(String[] args) {
-		Die d = new Die(6);
-		System.out.println(d.roll());
+		Die d = new Die(2);
+		System.out.println("Face of die -> " + d.roll());
 	}
 }
